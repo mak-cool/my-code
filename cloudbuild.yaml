@@ -19,6 +19,6 @@ steps:
    - 'us-central1-a'
    - '--container-image'
    - 'gcr.io/test-mayank-283707/my-code'
- # update image name. This is what is pushed in GCR
- images:
- - gcr.io/test-mayank-283707/my-code
+
+images:
+- gcr.io/test-mayank-283707/my-code
