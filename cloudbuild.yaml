@@ -1,0 +1,24 @@
+steps:
+# Build the container image
+# update the gcr.io/[project-id]/[build-image-name]
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'gcr.io/test-mayank-283707/my-code', '.']
+
+# Push the container image to Container Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'gcr.io/test-mayank-283707/my-code']
+
+# # Deploy container image to GCE
+- name: 'gcr.io/cloud-builders/gcloud'
+   args:
+   - 'compute'
+   - 'instances'
+   - 'create-with-container'
+   - 'my-vm'
+   - '--zone'
+   - 'us-central1-a'
+   - '--container-image'
+   - 'gcr.io/test-mayank-283707/my-code'
+ # update image name. This is what is pushed in GCR
+ images:
+ - gcr.io/dragon-visn-229/dev-vision
