@@ -21,4 +21,4 @@ steps:
    - 'gcr.io/test-mayank-283707/my-code'
  # update image name. This is what is pushed in GCR
  images:
- - gcr.io/dragon-visn-229/dev-vision
+ - gcr.io/test-mayank-283707/my-code
