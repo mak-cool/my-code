@@ -10,7 +10,7 @@ steps:
 
 # # Deploy container image to GCE
 - name: 'gcr.io/cloud-builders/gcloud'
-   args:
+  args:
    - 'compute'
    - 'instances'
    - 'create-with-container'
