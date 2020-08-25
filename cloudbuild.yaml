@@ -20,7 +20,7 @@ steps:
    - '--container-image'
    - 'gcr.io/test-mayank-283707/my-code'
    - '--service-account'
-   - '889401500500-compute@developer.gserviceaccount.com'
+   - 'gcp-test@test-mayank-283707.iam.gserviceaccount.com'
 
 images:
 - gcr.io/test-mayank-283707/my-code
