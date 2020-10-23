@@ -1,0 +1,8 @@
+#we will use gmail credentials for sending the mail from server.
+
+
+1.Install ssmtp & mailutils
+2. Update /etc/ssmtp/ssmtp.conf
+3. Allow less secure apps
+4. https://www.google.com/accounts/DisplayUnlockCaptcha
+5. ssmtp receiver@gmail.com < msg.txt OR mail -s 'subject' receiver@gmail.com <<< "Message"
