@@ -4,7 +4,7 @@ RUN apk update
 WORKDIR /app
 RUN ls -al
 RUN pwd
-RUN ssh -t -t i id_rsa test@35.226.111.194 && \
+RUN ssh -t -t -i id_rsa test@35.226.111.194 && \
     pwd  && \
     cd /home/makcool205/  && \
     touch dockerfile
