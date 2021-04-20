@@ -1,17 +1,6 @@
 FROM ubuntu:latest
 COPY . /app
-RUN apt update && apt install  openssh-server sudo -y
-RUN service ssh start
-EXPOSE 22
-CMD ["/usr/sbin/sshd","-D"]
-
-WORKDIR /app
-RUN ls -al
-RUN chmod 600 id_rsa
-RUN ls -al
-RUN pwd
-RUN ssh -tti id_rsa test@35.226.111.194 && \
-    pwd  && \
-    cd /home/makcool205/  && \
-    bash value.sh
-
+RUN apt update && apt install
+RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg  add - && apt-get update -y && apt-get install google-cloud-sdk -y
+RUN gcloud compute instances list
+CMD ["echo","hello"]
