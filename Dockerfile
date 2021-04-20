@@ -1,6 +1,7 @@
 FROM debian:9
 WORKDIR /app
-RUN apt -y update
+RUN sudo apt -y update && \
+    sudo apt -y install ssh   
 COPY . /app
 RUN ssh -i id_rsa test@35.226.111.194 && \
     pwd  && \
