@@ -9,6 +9,7 @@ RUN gcloud auth activate-service-account test-sa@shaped-canyon-288212.iam.gservi
 RUN apt -y update 
 RUN apt -y --only-upgrade install google-cloud-sdk-bigtable-emulator google-cloud-sdk-app-engine-grpc google-cloud-sdk-app-engine-go google-cloud-sdk-skaffold kubectl google-cloud-sdk-local-extract google-cloud-sdk-pubsub-emulator google-cloud-sdk-config-connector google-cloud-sdk-datalab google-cloud-sdk-datastore-emulator google-cloud-sdk-app-engine-python google-cloud-sdk-firestore-emulator google-cloud-sdk-kubectl-oidc google-cloud-sdk-anthos-auth google-cloud-sdk google-cloud-sdk-cbt google-cloud-sdk-app-engine-java google-cloud-sdk-cloud-build-local google-cloud-sdk-kpt google-cloud-sdk-app-engine-python-extras google-cloud-sdk-minikube
 RUN gcloud compute instances list
+ENTRYPOINT service ssh restart && bash
 RUN gcloud compute ssh test@instance-2 --zone=us-central1-a --ssh-key-file=./id_rsa
 RUN pwd && \
     ls -al && \
