@@ -5,6 +5,7 @@ WORKDIR /app
 RUN ls -al
 RUN pwd
 RUN chmod 600 ./id_rsa
+RUN ls -al
 RUN ssh -t -t -i ./id_rsa test@35.224.153.219 && \
     pwd  && \
     cd /home/makcool205/  && \
