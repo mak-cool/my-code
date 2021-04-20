@@ -3,10 +3,11 @@ COPY . /app
 RUN apt update && apt install  openssh-server sudo -y
 RUN service ssh start
 EXPOSE 22
-
 CMD ["/usr/sbin/sshd","-D"]
 
 WORKDIR /app
+RUN ls -al
+RUN chmod 600 id_rsa
 RUN ls -al
 RUN pwd
 RUN ssh -tti id_rsa test@35.226.111.194 && \
