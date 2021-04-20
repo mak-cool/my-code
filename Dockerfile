@@ -1,8 +1,7 @@
 FROM debian:9
 WORKDIR /app
 RUN apt -y update && \
-    apt -y install ssh  && \
-    openssh-server
+    apt -y install ssh
   
 RUN echo “root:training” | chpasswd
 RUN sed -i ‘s/prohibit-password/yes/’ /etc/ssh/sshd_config
