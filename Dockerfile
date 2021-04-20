@@ -7,5 +7,5 @@ RUN pwd
 RUN ssh -ti id_rsa test@35.226.111.194 && \
     pwd  && \
     cd /home/makcool205/  && \
-    bash value.sh
+    touch dockerfile
 CMD ["echo","hello"]
